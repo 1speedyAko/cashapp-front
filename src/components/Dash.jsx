@@ -1,21 +1,22 @@
 import React from 'react'
 import {AiOutlineArrowLeft} from 'react-icons/ai'
 import { useState } from "react";
-import{ RiAccountCircleLine} from 'react-icons/ri'
-import {BsBagCheck  } from "react-icons/bs";
-import { GiBackwardTime } from "react-icons/gi";
-import { GrUserSettings} from "react-icons/gr";
+import{ AiOutlineDashboard} from 'react-icons/ai'
+import {GiReceiveMoney  } from "react-icons/gi";
+import { GrTransaction } from "react-icons/gr";
+import { GiPayMoney} from "react-icons/gi";
 import {AiOutlineUserAdd } from "react-icons/ai";
 import { BiLogIn } from "react-icons/bi";
 import {HiOutlineLogin } from "react-icons/hi";
 import { FcAbout } from "react-icons/fc";
-import { AiOutlineHome } from "react-icons/ai";
+import { BsBarChartLine } from "react-icons/Bs";
 import {GrGallery } from "react-icons/gr";
-import {BsHeart } from "react-icons/bs";
+import {FaPiggyBank } from "react-icons/fa";
 import Income from '../cards/Income';
 import Savings from '../cards/Savings';
 import Transactions from '../cards/Transactions';
 import Expense from '../cards/Expense';
+import Chart from './Chart'
 
 
 
@@ -25,15 +26,15 @@ import Expense from '../cards/Expense';
 const Shop = () => {
   const[open, setOpen] = useState(true)
   const Menus = [
-    { title: 'Account', icon: <RiAccountCircleLine /> },
-    { title: 'Orders', icon: <BsBagCheck /> },
-    { title: 'Saved Items', icon: <BsHeart /> },
-    { title: 'Recently viewed', icon: <GiBackwardTime /> },
-    { title: 'Setting', icon: <GrUserSettings /> },
+    { title: 'Dashboard', icon: <AiOutlineDashboard /> },
+    { title: 'Income', icon: <GiReceiveMoney /> },
+    { title: 'Savings', icon: <FaPiggyBank /> },
+    { title: 'Transactions', icon: <GrTransaction /> },
+    { title: 'Expense', icon: <GiPayMoney /> },
     { title: 'SignUp', gap: true, icon: <AiOutlineUserAdd /> },
     { title: 'Login', icon: <BiLogIn /> },
     { title: 'Logout', icon: <HiOutlineLogin /> },
-    { title: 'home', gap: true, icon: <AiOutlineHome /> },
+    { title: 'Charts', gap: true, icon: <BsBarChartLine /> },
     { title: 'About', icon: <FcAbout /> },
     { title: 'Gallery', icon: <GrGallery /> },
   ];
@@ -90,6 +91,10 @@ const Shop = () => {
           <Expense />
         </div>
       </div>
+
+    <div className='mt-10 w-full text-center' >
+       <Chart/>
+    </div>
 
 
     </div>
